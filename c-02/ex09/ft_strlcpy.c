@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedro-hm <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pedro-hm <pedro-hm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 18:11:13 by pedro-hm          #+#    #+#             */
-/*   Updated: 2024/07/18 13:24:45 by pedro-hm         ###   ########.fr       */
+/*   Created: 2024/07/17 15:11:18 by pedro-hm          #+#    #+#             */
+/*   Updated: 2024/07/17 17:18:38 by pedro-hm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int ft_str_is_uppercase(char *str)
+
 {
-	int i;
+	unsigned int	i;
 	i = 0;
-	while(str[i] != '\0')
+	while(i != size)
 	{
-		if (!(str[i] >= 'A' && str[i] <= 'Z'))
-		{
-			return (0);
-		}
+		dest[i] = src[i];
 		i++;
 	}
-	return (1);
-}      
+}

@@ -3,20 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedro-hm <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pedro-hm <pedro-hm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 13:12:09 by pedro-hm          #+#    #+#             */
-/*   Updated: 2024/07/16 17:17:59 by pedro-hm         ###   ########.fr       */
+/*   Updated: 2024/07/18 13:32:54 by pedro-hm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-char    *ft_strcpy(char *dest, char *src)
+
+char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
-	
-	i = 0;	
-	while (src[i++])
+
+	i = 0;
+	while (src[i] != '\0')
 	{
 		dest[i] = src[i];
+		i++;
 	}
-	return dest;
+	return (dest);
 }

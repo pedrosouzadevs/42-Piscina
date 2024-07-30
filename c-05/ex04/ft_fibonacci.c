@@ -1,40 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_fibonacci.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedro-hm <pedro-hm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pdro <pdro@student.42.fr>                  #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 14:10:50 by pedro-hm          #+#    #+#             */
-/*   Updated: 2024/07/25 16:26:23 by pedro-hm         ###   ########.fr       */
+/*   Created: 2024-07-30 19:50:38 by pdro              #+#    #+#             */
+/*   Updated: 2024-07-30 19:50:38 by pdro             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
+int	ft_fibonacci(int index)
 {
-	int	i;
-
-	i = nb - 1;
-	if (nb < 0)
+	if (index < 0)
+		return (-1);
+	if (index == 0)
 		return (0);
-	if (nb == 0 || nb == 1)
+	if (index == 1)
 		return (1);
-	else
-	{
-		while (i > 1)
-		{
-			nb = nb * i;
-			i--;
-		}
-	}
-	return (nb);
+	return (ft_fibonacci(index - 1) + ft_fibonacci(index - 2));
 }
 
-// int	main(void)
+// int  main(void)
 // {
-// 	int	number;
+//   int index;
 
-// 	number = 5;
-// 	printf("%d", ft_iterative_factorial(number));
-// 	return (0);
+//   index = 5;
+//   printf("%d\n", ft_fibonacci(6));
+//   return (0);
 // }

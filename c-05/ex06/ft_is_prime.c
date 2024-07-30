@@ -1,40 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedro-hm <pedro-hm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pdro <pdro@student.42.fr>                  #+#  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/25 14:10:50 by pedro-hm          #+#    #+#             */
-/*   Updated: 2024/07/25 16:26:23 by pedro-hm         ###   ########.fr       */
+/*   Created: 2024-07-30 20:27:18 by pdro              #+#    #+#             */
+/*   Updated: 2024-07-30 20:27:18 by pdro             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
+int	ft_is_prime(int nb)
 {
 	int	i;
 
-	i = nb - 1;
-	if (nb < 0)
+	i = 2;
+	if (nb <= 1)
 		return (0);
-	if (nb == 0 || nb == 1)
-		return (1);
-	else
+	while (i < nb)
 	{
-		while (i > 1)
-		{
-			nb = nb * i;
-			i--;
-		}
+		if (nb % i == 0)
+			return (0);
+		i++;
 	}
-	return (nb);
+	return (1);
 }
 
-// int	main(void)
+// int   main(void)
 // {
-// 	int	number;
+//   int number;
 
-// 	number = 5;
-// 	printf("%d", ft_iterative_factorial(number));
-// 	return (0);
+//   number = 8;
+//   printf("%d\n", ft_is_prime(number));
+//   return (0);
 // }

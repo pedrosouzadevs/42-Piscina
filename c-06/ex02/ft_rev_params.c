@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -11,28 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-=======
->>>>>>> 009be5cb336ccf93873bb7dd5a5fa8d79afcff78
 #include <unistd.h>
 
-void ft_putstr(char *str);
+void	ft_putstr(char *str);
 
-int main(int argc, char *argv[])
+int	main(int argc, char *argv[])
 {
-  int i;
+	int	i;
 
-  i = argc;
-  while (i > 1)
-  {
-    ft_putstr(argv[i - 1]);
-    write(1, "\n", 1);
-    i--;
-  }
-  return (0);
+	i = argc;
+	while (i > 1)
+	{
+		ft_putstr(argv[i - 1]);
+		write(1, "\n", 1);
+		i--;
+	}
+	return (0);
 }
 
-void ft_putstr(char *str)
+void	ft_putstr(char *str)
 {
-  while (*str)
-    write(1, str++, 1);
+	while (*str)
+	{
+		write(1, str++, 1);
+	}
 }

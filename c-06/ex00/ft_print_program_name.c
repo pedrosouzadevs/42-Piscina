@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pedro-hm <pedro-hm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 13:12:09 by pedro-hm          #+#    #+#             */
-/*   Updated: 2024/07/22 17:46:08 by pedro-hm         ###   ########.fr       */
+/*   Created: 2024/07/30 13:53:02 by pedro-hm          #+#    #+#             */
+/*   Updated: 2024/07/30 13:53:04 by pedro-hm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
-{
-	int	i;
+#include <unistd.h>
 
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+int main(int argc, char *argv[])
+{
+    if (argc == 1)
+    {
+        while (*argv[0])
+        {
+            write(1, argv[0]++, 1);
+        }
+        write(1, "\n", 1);
+    }
+    return (0);
 }

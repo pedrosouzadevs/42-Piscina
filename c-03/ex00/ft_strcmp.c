@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pedro-hm <pedro-hm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 13:12:09 by pedro-hm          #+#    #+#             */
-/*   Updated: 2024/07/22 17:46:08 by pedro-hm         ###   ########.fr       */
+/*   Created: 2024/07/22 13:23:03 by pedro-hm          #+#    #+#             */
+/*   Updated: 2024/07/24 11:49:09 by pedro-hm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int	i;
 
 	i = 0;
-	while (src[i])
+	while (s1[i] == s2[i])
 	{
-		dest[i] = src[i];
+		if (s1[i] == '\0')
+			return (0);
 		i++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (s1[i] - s2[i]);
 }

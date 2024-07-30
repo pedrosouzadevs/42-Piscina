@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pedro-hm <pedro-hm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 13:12:09 by pedro-hm          #+#    #+#             */
-/*   Updated: 2024/07/22 17:46:08 by pedro-hm         ###   ########.fr       */
+/*   Created: 2024/07/30 13:52:57 by pedro-hm          #+#    #+#             */
+/*   Updated: 2024/07/30 13:53:19 by pedro-hm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
-{
-	int	i;
+#include <unistd.h>
 
-	i = 0;
-	while (src[i])
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+void ft_putstr(char *str);
+
+int main(int argc, char *argv[])
+{
+  int i;
+
+  i = 1;
+  while (i < argc)
+  {
+    ft_putstr(argv[i]);
+    write(1, "\n", 1);
+    i++;
+  }
+  return (0);
+}
+
+void ft_putstr(char *str)
+{
+  while (*str)
+    write(1, str++, 1);
 }

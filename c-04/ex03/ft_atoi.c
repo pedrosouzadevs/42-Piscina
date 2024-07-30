@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pedro-hm <pedro-hm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 13:12:09 by pedro-hm          #+#    #+#             */
-/*   Updated: 2024/07/22 17:46:08 by pedro-hm         ###   ########.fr       */
+/*   Created: 2024/07/24 17:32:13 by pedro-hm          #+#    #+#             */
+/*   Updated: 2024/07/30 10:33:15 by pedro-hm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_atoi(const char *str)
 {
-	int	i;
+	int	res;
+	int	negative;
 
-	i = 0;
-	while (src[i])
+	negative = 1;
+	res = 0;
+	while (*str && (*str == ' ' || *str == '\n' || *str == '\t' ||
+			*str == '\v' || *str == '\f' || *str == '\r'))
+		++str;
+	if (*str == '-')
+		negative = -1;
+	if (*str == '-' || *str == '+')
+		++str;
+	while (*str && *str >= '0' && *str <= '9')
 	{
-		dest[i] = src[i];
-		i++;
+		res = res * 10 + (*str - 48);
+		++str;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (res * negative);
 }

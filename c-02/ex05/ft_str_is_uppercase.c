@@ -3,23 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedro-hm <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pedro-hm <pedro-hm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 18:11:13 by pedro-hm          #+#    #+#             */
-/*   Updated: 2024/07/18 13:24:45 by pedro-hm         ###   ########.fr       */
+/*   Updated: 2024/07/22 17:51:04 by pedro-hm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int ft_str_is_uppercase(char *str)
+
+int	ft_str_is_uppercase(char *str)
 {
-	int i;
-	i = 0;
-	while(str[i] != '\0')
+	if (*str == '\0')
+		return (1);
+	while (*str != '\0')
 	{
-		if (!(str[i] >= 'A' && str[i] <= 'Z'))
-		{
+		if (!(*str >= 'A' && *str <= 'Z'))
 			return (0);
-		}
-		i++;
+		str++;
 	}
 	return (1);
-}      
+}

@@ -3,25 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedro-hm <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pedro-hm <pedro-hm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 18:14:27 by pedro-hm          #+#    #+#             */
-/*   Updated: 2024/07/16 18:16:39 by pedro-hm         ###   ########.fr       */
+/*   Updated: 2024/07/22 17:55:47 by pedro-hm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_printable.c(char *str)
+int	ft_str_is_printable(char *str)
 {
-	int	i;
-	
-	i = 0;
-	while(str[i] != '\0')
+	while (*str != '\0')
 	{
-		if (!(str[i] > 32 ')) 
+		if (*str < 32 || *str > 126)
 		{
 			return (0);
 		}
-		i++;
-	}	
+		str++;
+	}
 	return (1);
 }

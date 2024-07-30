@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pedro-hm <pedro-hm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 13:12:09 by pedro-hm          #+#    #+#             */
-/*   Updated: 2024/07/22 17:46:08 by pedro-hm         ###   ########.fr       */
+/*   Created: 2024/07/25 14:10:50 by pedro-hm          #+#    #+#             */
+/*   Updated: 2024/07/25 16:26:23 by pedro-hm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+#include <stdio.h>
+
+int	ft_iterative_factorial(int nb)
 {
 	int	i;
 
-	i = 0;
-	while (src[i])
+	i = nb - 1;
+	if (nb == 0 || nb == 1)
+		return (1);
+	else
 	{
-		dest[i] = src[i];
-		i++;
+		while (i > 1)
+		{
+			nb = nb * i;
+			i--;
+		}
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (nb);
 }
+
+// int	main(void)
+// {
+// 	int	number;
+
+// 	number = 5;
+// 	printf("%d", ft_iterative_factorial(number));
+// 	return (0);
+// }

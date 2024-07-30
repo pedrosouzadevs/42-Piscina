@@ -3,21 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedro-hm <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pedro-hm <pedro-hm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 18:23:25 by pedro-hm          #+#    #+#             */
-/*   Updated: 2024/07/16 18:25:11 by pedro-hm         ###   ########.fr       */
+/*   Updated: 2024/07/22 18:04:01 by pedro-hm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 char	ft_strlowcase(char *str)
 {
-	int i;
+	char	*ptr;
 
-	i = 0;
-	while(str[i] != '\0')
+	ptr = str;
+	while (*ptr != '\0')
 	{
-		str[i] = str[i] - 32;
-		i++;
+		if (*ptr >= 'A' && *ptr <= 'Z')
+			*ptr += 32;
+		ptr++;
 	}
 	return (str);
 }

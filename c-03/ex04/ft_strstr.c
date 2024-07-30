@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pedro-hm <pedro-hm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/16 13:12:09 by pedro-hm          #+#    #+#             */
-/*   Updated: 2024/07/22 17:46:08 by pedro-hm         ###   ########.fr       */
+/*   Created: 2024/07/22 13:54:00 by pedro-hm          #+#    #+#             */
+/*   Updated: 2024/07/24 11:56:31 by pedro-hm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strstr(char *str, char *to_find)
 {
-	int	i;
+	char	*start;
+	char	*target;
 
-	i = 0;
-	while (src[i])
+	if (*to_find == '\0')
+		return (str);
+	while (*str)
 	{
-		dest[i] = src[i];
-		i++;
+		start = str;
+		target = to_find;
+		while (*str && *target && *str == *target)
+		{
+			str++;
+			target++;
+		}
+		if (*target == '\0')
+			return (start);
+		str = start + 1;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (0);
 }

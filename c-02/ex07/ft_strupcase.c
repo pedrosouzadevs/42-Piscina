@@ -3,22 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedro-hm <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pedro-hm <pedro-hm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 18:17:09 by pedro-hm          #+#    #+#             */
-/*   Updated: 2024/07/16 18:22:57 by pedro-hm         ###   ########.fr       */
+/*   Updated: 2024/07/22 18:00:55 by pedro-hm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strupcase(char *str)
 {
-	int	i;
-	
-	i = 0;
-	while(str[i] != '\0')
+	char	*ptr;
+
+	ptr = str;
+	while (*ptr != '\0')
 	{
-		str[i] = str[i] + 32;
-		i++;
+		if (*ptr >= 'a' && *ptr <= 'z')
+			*ptr -= 32;
+		ptr++;
 	}
 	return (str);
 }

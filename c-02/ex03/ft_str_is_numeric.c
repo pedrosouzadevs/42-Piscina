@@ -3,18 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedro-hm <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: pedro-hm <pedro-hm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/16 18:04:52 by pedro-hm          #+#    #+#             */
-/*   Updated: 2024/07/16 18:08:57 by pedro-hm         ###   ########.fr       */
+/*   Updated: 2024/07/22 17:49:11 by pedro-hm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int ft_str_is_numeric(char *str)
+
+int	ft_str_is_numeric(char *str)
 {
 	int	i;
-	
+
 	i = 0;
-	while(str[i] != '\0')
+	if (*str == '\0')
+	{
+		return (1);
+	}
+	while (str[i] != '\0')
 	{
 		if (!(str[i] >= '0' && str[i] <= '9'))
 		{

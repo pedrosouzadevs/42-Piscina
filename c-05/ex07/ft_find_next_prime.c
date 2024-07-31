@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_find_next_prime.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pdro <pdro@student.42.fr>                  #+#  +:+       +#+        */
+/*   By: pedro-hm <pedro-hm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024-07-30 22:00:45 by pdro              #+#    #+#             */
-/*   Updated: 2024-07-30 22:00:45 by pdro             ###   ########.fr       */
+/*   Created: 2024/07/30 22:00:45 by pdro              #+#    #+#             */
+/*   Updated: 2024/07/31 13:49:18 by pedro-hm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,16 @@ int	ft_is_prime(int nb)
 
 int	ft_find_next_prime(int nb)
 {
-	while (!ft_is_prime(nb))
+	while (!ft_is_prime(nb) || nb < 46340)
 		nb++;
 	return (nb);
 }
 
-// int main(void)
+// int	main(void)
 // {
 //   int number;
 
-//   number = 8;
+//   number = 3;
 //   printf("%d\n", ft_find_next_prime(number));
 //   return (0);
 // }

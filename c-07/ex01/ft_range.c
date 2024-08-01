@@ -6,7 +6,7 @@
 /*   By: pedro-hm <pedro-hm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 23:03:40 by pdro              #+#    #+#             */
-/*   Updated: 2024/07/31 13:15:45 by pedro-hm         ###   ########.fr       */
+/*   Updated: 2024/07/31 16:32:53 by pedro-hm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,18 @@ int *ft_range(int min, int max)
     int *range;
     int i;
 
+    i = 0;
     if (min < 0)
         i = min - max;
-    else if (max < 0)
+    if (max < 0)
         i = -max - min;
-    else if (min >= 0 && max >= 0)
+    if (min >= 0 && max >= 0)
 	    i = max - min;
     range = (int *)malloc(i * sizeof(int));
     i = 0;
     if (max < min)
     {
-        while ( min == max)
+        while ( min != max + 1)
         {
             range[i] = min;
             min--;
@@ -37,7 +38,7 @@ int *ft_range(int min, int max)
     }
     else if (min < max)
     {
-         while (min == max)
+         while (min != max)
         {
             range[i] = min;
             min++;
